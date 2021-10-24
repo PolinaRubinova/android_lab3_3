@@ -10,6 +10,5 @@ class AboutActivity : AppCompatActivity() {
 
         val binding = ActivityAboutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.toBack.setOnClickListener { finish() }
     }
 }
