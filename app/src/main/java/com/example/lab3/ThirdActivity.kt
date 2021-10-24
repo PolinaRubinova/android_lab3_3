@@ -12,14 +12,15 @@ class ThirdActivity : AppCompatActivity() {
         val binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.toFirst.setOnClickListener {
-            setResult(1)
-            finish()
-        }
-        binding.toSecond.setOnClickListener {
-            finish()
-        }
+        binding.toFirst.setOnClickListener { toFirst() }
+        binding.toSecond.setOnClickListener { finish() }
         binding.toAbout.setOnNavigationItemSelectedListener  { toAbout(it) }
+    }
+
+    private fun toFirst() {
+        val intent = Intent(this, FirstActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
     }
 
     private fun toAbout(item: MenuItem): Boolean {

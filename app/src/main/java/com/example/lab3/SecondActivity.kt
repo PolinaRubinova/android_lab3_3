@@ -19,7 +19,7 @@ class SecondActivity : AppCompatActivity() {
     }
 
     private fun toThird() {
-        startActivityForResult(Intent(this, ThirdActivity::class.java), 0)
+        startActivity(Intent(this, ThirdActivity::class.java))
     }
 
     private fun toAbout(item: MenuItem): Boolean {
@@ -29,10 +29,5 @@ class SecondActivity : AppCompatActivity() {
             }
         }
         return false
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == 1) { finish() }
     }
 }
